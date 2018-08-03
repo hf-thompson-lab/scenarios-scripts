@@ -26,7 +26,7 @@ col_plot<-c(brewer.pal(9,"Blues"),PLC)
 scenarios<-c("RT","YC","CC","GA","GG")
 #scenarios <- c("RT", "YC")
 
-LU_temp_dir1<-"Y:/Lee/Jonah_scripts/outputs/"
+LU_temp_dir1<-"Y:/Lee/scenarios-scripts/outputs/"
 scen_rep<-"1101701"
 species_file<-read.csv("Y:/duveneck/LANDIS_INPUTS/eco_spp_inc/LANDIS_NE_SPECIES.csv",
                        stringsAsFactors = FALSE)
@@ -59,7 +59,7 @@ empty.raster <- function(){
 zero_ras <- empty.raster()
 
 system.time(foreach(SC1 = 1: length (scenarios), .packages = c("raster", "RColorBrewer"))%dopar%{
-  sink(file = "Y:/Lee/Jonah_scripts/log_06012018.txt", append = TRUE)
+  sink(file = "Y:/Lee/scenarios-scripts/log_06012018.txt", append = TRUE)
   rasterOptions(tmpdir="Y:/duveneck/raster_package_temp_files/")
   
   SC<-scenarios[SC1]
